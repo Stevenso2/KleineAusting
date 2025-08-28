@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>kleine Austing GmbH – persönlich näher, technisch weiter</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<style>
+    :root {
+      --main-color: #2E8B8B;
+      --accent-color: #176362;
+      --bg-light: #f5fafd;
+      --text-dark: #1f2d2d;
+    }
+    body {
+      font-family: 'Montserrat', Arial, sans-serif;
+      margin: 0;
+      background: var(--bg-light);
+      color: var(--text-dark);
+    }
+    header {
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(46,139,139,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7em 7vw;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .logo {
+      height: 48px;
+      width: auto;
+      transition: transform 0.2s;
+    }
+    .logo:hover {
+      transform: scale(1.08);
+    }
+    nav a {
+      margin-left: 2em;
+      text-decoration: none;
+      color: var(--main-color);
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: var(--accent-color);
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 4em 1em 3em;
+      background: linear-gradient(90deg,#f5fafd 0%,#e2f4f7 100%);
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.4em;
+      font-weight: 700;
+      margin: 0.2em 0 0.6em;
+      color: var(--main-color);
+      letter-spacing: -1px;
+    }
+    .hero p {
+      font-size: 1.3em;
+      margin-bottom: 1.5em;
+      color: #2e4d4d;
+    }
+    .cta-btn {
+      background: var(--main-color);
+      color: #fff;
+      padding: 0.9em 2.2em;
+      border: none;
+      border-radius: 25px;
+      font-size: 1em;
+      font-weight: 700;
+      transition: background 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(46, 139, 139, 0.12);
+    }
+    .cta-btn:hover {
+      background: var(--accent-color);
+    }
+    .section {
+      max-width: 1000px;
+      margin: 3em auto 0 auto;
+      padding: 0 4vw;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 1.8em;
+      color: var(--main-color);
+      margin-bottom: 1.5em;
+      font-weight: 700;
+    }
+    .about {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2em;
+    }
+    .about-text, 
+    .about-facts {
+      max-width: 500px;
+      font-size: 1.13em;
+    }
+    .about-facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      justify-content: center;
+      margin-top: 1em;
+    }
+    .fact {
+      background: #fff;
+      padding: 1em 2em;
+      border-radius: 16px;
+      box-shadow: 0 2px 14px rgba(46,139,139,0.10);
+      text-align: center;
+      min-width: 140px;
+    }
+    .fact-title {
+      font-size: 1.1em;
+      color: var(--main-color);
+      font-weight: 600;
+      margin-bottom: 0.2em;
+    }
+    .services-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      justify-content: center;
+      margin-top: 1em;
+    }
+    .service-box {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 14px rgba(46,139,139,0.10);
+      padding: 1.2em 1.3em;
+      max-width: 260px;
+      min-width: 210px;
+      flex: 1 0 210px;
+      transition: transform 0.18s, box-shadow 0.18s;
+    }
+    .service-box:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 8px 32px rgba(46,139,139,0.18);
+    }
+    .service-title {
+      color: var(--main-color);
+      font-weight: 600;
+      font-size: 1.13em;
+      margin-bottom: 0.4em;
+    }
+    .team-grid {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.6em;
+      margin-top: 1.4em;
+    }
+    .team-card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(46,139,139,0.11);
+      padding: 1em 1.2em;
+      min-width: 150px;
+      text-align: center;
+      color: #264d4d;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+    }
+    .team-card small {
+      display: block;
+      color: #68a3a3;
+      margin-top: 2px;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      max-width: 340px;
+      margin: 2em auto 0 auto;
+      background: #fff;
+      padding: 2em 1.5em 1em 1.5em;
+      border-radius: 18px;
+      box-shadow: 0 2px 16px rgba(46,139,139,0.10);
+    }
+    .contact-form input,
+    .contact-form textarea {
+      font-family: inherit;
+      font-size: 1em;
+      padding: 0.7em 1em;
+      border: 1.5px solid #b2d1d1;
+      border-radius: 8px;
+      outline: none;
+      transition: border 0.18s;
+    }
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border: 1.5px solid var(--main-color);
+    }
+    .contact-form textarea {
+      min-height: 64px;
+      resize: vertical;
+    }
+    .contact-form button {
+      margin-top: 0.2em;
+      width: 100%;
+    }
+    footer {
+      background: var(--main-color);
+      color: #fff;
+      text-align: center;
+      padding: 1.5em 1em 1em 1em;
+      font-size: 1em;
+      margin-top: 3em;
+      border-radius: 22px 22px 0 0;
+    }
+    @media (max-width: 700px) {
+      .nav-container {padding: 0.7em 3vw;}
+      .hero {padding: 2.2em 0.3em 2em;}
+      .section {padding: 0 2vw;}
+      .about, .services-list, .team-grid {flex-direction: column; gap: 1em;}
+      .about-facts {flex-direction: column;}
+    }
+    ::selection { background: #c8e6e6;}
+</style>
+</head>
+<body>
+<header>
+<div class="nav-container">
+<img src="https://9el43lz1uejjegfk.public.blob.vercel-storage.com/b9d71394-cebc-425d-9640-15112a09b679-1756363078908-Unique_logo_featuring_a_stylized_letter__A___The_d.png" class="logo" alt="Logo kleine Austing GmbH">
+<nav>
+<a href="#about">Über uns</a>
+<a href="#services">Leistungen</a>
+<a href="#team">Team</a>
+<a href="#contact">Kontakt</a>
+</nav>
+</div>
+</header>
+ 
+  <section class="hero">
+<h1>kleine Austing GmbH</h1>
+<p>persönlich näher, technisch weiter</p>
+<a href="#contact"><button class="cta-btn">Jetzt Kontakt aufnehmen</button></a>
+</section>
+ 
+  <section id="about" class="section">
+<div class="section-title">Über uns</div>
+<div class="about">
+<div class="about-text">
+        Wir sind Ihr persönlicher Partner für moderne IT-Lösungen in Lohne. Als kleines, engagiertes Team mit viel Erfahrung bieten wir Ihnen individuelle Betreuung, ganzheitliche Services und zukunftssichere Technologie.
+</div>
+<div class="about-facts">
+<div class="fact">
+<div class="fact-title">Teamgröße</div>
+<div>10 Experten</div>
+</div>
+<div class="fact">
+<div class="fact-title">Gründung</div>
+<div>Startup-Mentalität.<br>Große Nähe.</div>
+</div>
+<div class="fact">
+<div class="fact-title">Standort</div>
+<div>Lohne (Oldenburg)</div>
+</div>
+</div>
+</div>
+</section>
+ 
+  <section id="services" class="section">
+<div class="section-title">Unsere Leistungen</div>
+<div class="services-list">
+<div class="service-box">
+<div class="service-title">IT-Komplettlösungen</div>
+<div>Von Planung bis Wartung – alles aus einer Hand, individuell und zukunftsfähig.</div>
+</div>
+<div class="service-box">
+<div class="service-title">Netzwerk & Infrastruktur</div>
+<div>Stabile, sichere Netzwerke und moderne Infrastruktur für Ihre Geschäftsprozesse.</div>
+</div>
+<div class="service-box">
+<div class="service-title">Cloud & Virtualisierung</div>
+<div>Sichere Cloud-Lösungen und effiziente Virtualisierung nach Maß.</div>
+</div>
+<div class="service-box">
+<div class="service-title">Support & Service</div>
+<div>Persönlicher Support – schnell, lösungsorientiert und nah am Kunden.</div>
+</div>
+</div>
+</section>
+ 
+  <section id="team" class="section">
+<div class="section-title">Unser Team</div>
+<div class="team-grid">
+<div class="team-card">10 Köpfe<br><small>IT-Expertise & Leidenschaft</small></div>
+<div class="team-card">Gemeinsam.<br>Zielgerichtet.</div>
+<div class="team-card">Direkter Kontakt.<br>Schnelle Lösungen.</div>
+<div class="team-card">Immer für Sie da.</div>
+</div>
+</section>
+ 
+  <section id="contact" class="section">
+<div class="section-title">Kontakt aufnehmen</div>
+<form class="contact-form">
+<input type="text" name="name" placeholder="Ihr Name" required>
+<input type="email" name="email" placeholder="Ihre E-Mail" required>
+<textarea name="message" placeholder="Ihre Nachricht..." required></textarea>
+<button class="cta-btn" type="submit">Absenden</button>
+</form>
+</section>
+<footer>
+&copy; 2025 kleine Austing GmbH &ndash; persönlich näher, technisch weiter
+</footer>
+</body>
+</html>
