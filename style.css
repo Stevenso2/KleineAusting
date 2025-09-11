@@ -275,4 +275,10 @@
     max-width: 400px;
     align-self: center;
   }
+  .section-image {
+    flex: none;
+    width: 100%;
+    max-width: 600px;
+    align-self: center;
+  }
 }
