@@ -278,7 +278,7 @@
   .section-image2 {
     flex: none;
     width: 100%;
-    max-width: 600px;
+    max-width: 450px;
     align-self: center;
   }
 }
