@@ -245,8 +245,8 @@
 }
 
 .section-image2 {
-  flex: 0 0 400px;
-  width: 400px;
+  flex: 0 0 410px;
+  width: 410px;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -280,13 +280,13 @@
   .section-image {
     flex: none;
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
     align-self: center;
   }
   .section-image2 {
     flex: none;
     width: 100%;
-    max-width: 450px;
+    max-width: 410px;
     align-self: center;
   }
 }
