@@ -484,6 +484,7 @@ function repeatFunction() {
         addnew++
       }
     }));
+    addnew--
   } 
   // Schedule next execution
   setTimeout(repeatFunction, 1000);
