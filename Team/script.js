@@ -489,4 +489,4 @@ function repeatFunction() {
   // Schedule next execution
   setTimeout(repeatFunction, 1000);
 }
-document.onload = function(){repeatFunction()}
+document.onload = repeatFunction()
