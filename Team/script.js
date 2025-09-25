@@ -82,7 +82,7 @@ class DVDScreensaver {
     this.y = Math.random() * (bounds.height - this.height);
     
     // Random velocity direction with consistent speed
-    const angle = 45 * 2 * Math.PI;
+    const angle = 45;
     this.velocityX = Math.cos(angle) * this.speed;
     this.velocityY = Math.sin(angle) * this.speed;
     
