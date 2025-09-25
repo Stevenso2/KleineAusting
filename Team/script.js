@@ -446,8 +446,43 @@ class DVDScreensaver {
   }
 }
 
-const dvd = new DVDScreensaver({
-  elementId: 'Günther',
-  speed: 5,
-  trail: false
-});
+function addBouncingImage(targetId, imageId, imageSrc, imageAlt) {
+  const targetElement = document.getElementById(targetId);
+  
+  if (!targetElement) {
+    console.error(`Target element with id "${targetId}" not found!`);
+    return false;
+  }
+  
+  if (document.getElementById(imageId)) {
+    console.warn(`Element with id "${imageId}" already exists!`);
+    return false;
+  }
+  
+  targetElement.insertAdjacentHTML('beforeend', `
+    <div class="bouncing-image" id="${imageId}">
+      <img src="${imageSrc}" alt="${imageAlt}">
+    </div>
+  `);
+  
+  return true;
+}
+const dvds = []
+var addnew = 1
+var IMGammount = 0
+
+while (true) {
+  if (addnew > 0) {
+    IMGammount++
+    dvds.push(new DVDScreensaver({
+      elementId: `Günther${IMGammount}`,
+      speed: 5,
+      trail: false,
+      onCornerHit: (data) => {
+        console.log('Corner hit!', data);
+        addBouncingImage('DVD', `Günther${IMGammount}`, 'Günter.png', `Günther${IMGammount}`);
+        addnew++
+      }
+    }));
+  }
+}
