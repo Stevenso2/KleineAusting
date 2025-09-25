@@ -490,7 +490,7 @@ function repeatFunction() {
   setTimeout(repeatFunction, 1000);
 }
 
-const definitions = document.getElementsByClassName("DVD").item().id()
+const definitions = document.getElementsByClassName("DVD")[0].id
 const img_name = toString(definitions).split("|")[0]
 const dvd_obj = toString(definitions).split("|")[1]
 
