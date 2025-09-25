@@ -469,26 +469,24 @@ function addBouncingImage(targetId, imageId, imageSrc, imageAlt) {
 }
 const dvds = []
 var addnew = 1
-var IMGammount = 1
+var IMGammount = 0
 
 function repeatFunction() {
   if (addnew > 0) {
     IMGammount++
     addnew--
+    addBouncingImage('DVD', `Günther1`, 'Günter.png', `Günther1`);
     dvds.push(new DVDScreensaver({
       elementId: `Günther${IMGammount}`,
       speed: 5,
       trail: false,
       onCornerHit: (data) => {
         console.log('Corner hit!', data);
-        addBouncingImage('DVD', `Günther${IMGammount}`, 'Günter.png', `Günther${IMGammount}`);
         addnew++
       }
     }));
-  } 
-  else {console.log("nope")}
+  }
   // Schedule next execution
   setTimeout(repeatFunction, 1000);
 }
-addBouncingImage('DVD', `Günther1`, 'Günter.png', `Günther1`);
 document.onload = function(){repeatFunction()}
