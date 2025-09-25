@@ -10,6 +10,9 @@
       height: 100%;
       background: var(--bg-light);
       color: var(--text-dark);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
     header {
       background: #fff;
@@ -74,21 +77,6 @@
       font-size: 1.3em;
       margin-bottom: 1.5em;
       color: #2e4d4d;
-    }
-    .cta-btn {
-      background: var(--main-color);
-      color: #fff;
-      padding: 0.9em 2.2em;
-      border: none;
-      border-radius: 25px;
-      font-size: 1em;
-      font-weight: 700;
-      transition: background 0.2s, box-shadow 0.2s;
-      cursor: pointer;
-      box-shadow: 0 4px 16px rgba(46, 139, 139, 0.12);
-    }
-    .cta-btn:hover {
-      background: var(--accent-color);
     }
     .section {
       max-width: 1000px;
