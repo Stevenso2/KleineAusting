@@ -82,7 +82,7 @@ class DVDScreensaver {
     this.y = Math.random() * (bounds.height - this.height);
     
     // Random velocity direction with consistent speed
-    const angle = Math.random() * 2 * Math.PI;
+    const angle = 45 * 2 * Math.PI;
     this.velocityX = Math.cos(angle) * this.speed;
     this.velocityY = Math.sin(angle) * this.speed;
     
@@ -443,61 +443,6 @@ class DVDScreensaver {
     if (this.element && this.element.parentNode) {
       this.element.parentNode.removeChild(this.element);
     }
-  }
-}
-
-// Screen Manager for multiple images
-class DVDScreenManager {
-  constructor() {
-    this.screensavers = new Map();
-    this.imageCounter = 0;
-  }
-  
-  add(options = {}) {
-    const id = options.elementId || `dynamicImage${++this.imageCounter}`;
-    
-    // Create element if it doesn't exist
-    if (!document.getElementById(id)) {
-      const element = document.createElement('div');
-      element.id = id;
-      element.className = 'bouncing-image';
-      element.innerHTML = '&#x3C;img src=&#x22;https://via.placeholder.com/100x100/ff6b6b/ffffff?text=NEW&#x22; alt=&#x22;Dynamic Image&#x22;&#x3E;';
-      document.body.appendChild(element);
-    }
-    
-    const screensaver = new DVDScreensaver({ ...options, elementId: id });
-    this.screensavers.set(id, screensaver);
-    
-    return screensaver;
-  }
-  
-  remove(id) {
-    const screensaver = this.screensavers.get(id);
-    if (screensaver) {
-      screensaver.destroy();
-      this.screensavers.delete(id);
-    }
-  }
-  
-  pauseAll() {
-    this.screensavers.forEach(screensaver => screensaver.pause());
-  }
-  
-  startAll() {
-    this.screensavers.forEach(screensaver => screensaver.start());
-  }
-  
-  setGlobalSpeed(speed) {
-    this.screensavers.forEach(screensaver => screensaver.setSpeed(speed));
-  }
-  
-  getAll() {
-    return Array.from(this.screensavers.values());
-  }
-  
-  clear() {
-    this.screensavers.forEach(screensaver => screensaver.destroy());
-    this.screensavers.clear();
   }
 }
 
