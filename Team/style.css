@@ -37,6 +37,34 @@
       max-width: 1200px;
       margin: auto;
     }
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+  position: relative;
+}
+
+.bouncing-image {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  transition: none;
+}
+
+.bouncing-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: hue-rotate(0deg); /* For color changes */
+  transition: filter 0.3s ease;
+}
+
+/* Optional: Add glow effect */
+.bouncing-image img {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
     .logo {
       height: 48px;
       width: auto;
