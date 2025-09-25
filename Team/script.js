@@ -447,7 +447,7 @@ class DVDScreensaver {
 }
 
 function addBouncingImage(imageId, imageSrc, imageAlt) {
-  const targetElement = document.getElementsByClassName("DVD");
+  const targetElement = document.getElementsByClassName("DVD")[0];
   
   if (!targetElement) {
     console.error(`Target element with id "${targetId}" not found!`);
