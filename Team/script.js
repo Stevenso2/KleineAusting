@@ -477,7 +477,7 @@ function repeatFunction() {
     addnew--
     addBouncingImage(dvd_obj + IMGammount, img_name, dvd_obj + IMGammount);
     dvds.push(new DVDScreensaver({
-      elementId: `Günther${IMGammount}`,
+      elementId: dvd_obj + IMGammount,
       speed: 5,
       trail: false,
       onCornerHit: (data) => {
