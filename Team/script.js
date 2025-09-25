@@ -475,7 +475,7 @@ function repeatFunction() {
   if (addnew > 0) {
     IMGammount++
     addnew--
-    addBouncingImage('DVD', `Günther1`, 'Günter.png', `Günther1`);
+    addBouncingImage('DVD', `Günther${IMGammount}`, 'Günter.png', `Günther${IMGammount}`);
     dvds.push(new DVDScreensaver({
       elementId: `Günther${IMGammount}`,
       speed: 5,
