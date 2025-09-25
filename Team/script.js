@@ -469,7 +469,7 @@ function addBouncingImage(targetId, imageId, imageSrc, imageAlt) {
 }
 const dvds = []
 var addnew = 1
-var IMGammount = 0
+var IMGammount = 1
 
 function repeatFunction() {
   if (addnew > 0) {
