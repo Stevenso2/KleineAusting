@@ -471,7 +471,7 @@ const dvds = []
 var addnew = 1
 var IMGammount = 0
 
-while (true) {
+function repeatFunction() {
   if (addnew > 0) {
     IMGammount++
     dvds.push(new DVDScreensaver({
@@ -484,5 +484,10 @@ while (true) {
         addnew++
       }
     }));
-  }
+  } 
+  // Schedule next execution
+  setTimeout(repeatFunction, 1000);
 }
+
+// Start the cycle
+repeatFunction();
