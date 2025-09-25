@@ -446,8 +446,8 @@ class DVDScreensaver {
   }
 }
 
-function addBouncingImage(targetId, imageId, imageSrc, imageAlt) {
-  const targetElement = document.getElementById(targetId);
+function addBouncingImage(imageId, imageSrc, imageAlt) {
+  const targetElement = document.getElementsByClassName("DVD");
   
   if (!targetElement) {
     console.error(`Target element with id "${targetId}" not found!`);
@@ -475,7 +475,7 @@ function repeatFunction() {
   if (addnew > 0) {
     IMGammount++
     addnew--
-    addBouncingImage('DVD', `Günther${IMGammount}`, 'Günter.png', `Günther${IMGammount}`);
+    addBouncingImage(dvd_obj + IMGammount, img_name, dvd_obj + IMGammount);
     dvds.push(new DVDScreensaver({
       elementId: `Günther${IMGammount}`,
       speed: 5,
@@ -489,4 +489,9 @@ function repeatFunction() {
   // Schedule next execution
   setTimeout(repeatFunction, 1000);
 }
+
+const definitions = document.getElementsByClassName("DVD").item().id()
+const img_name = toString(definitions).split("|")[0]
+const dvd_obj = toString(definitions).split("|")[1]
+
 document.onload = repeatFunction()
