@@ -490,4 +490,4 @@ function repeatFunction() {
   setTimeout(repeatFunction, 1000);
 }
 addBouncingImage('DVD', `Günther0`, 'Günter.png', `Günther0`);
-document.onloadeddata = repeatFunction;
+document.onload = repeatFunction;
