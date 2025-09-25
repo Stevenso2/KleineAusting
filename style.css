@@ -293,3 +293,61 @@
     align-self: center;
   }
 }
+/* Theme Toggle Button */
+.theme-toggle {
+  background: var(--main-color);
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 1.2em;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.theme-toggle:hover {
+  background: var(--accent-color);
+  transform: scale(1.1);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+.toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover .toggle-icon {
+  transform: rotate(20deg);
+}
+
+/* Adjust nav container for the button */
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7em 7vw;
+  max-width: 1200px;
+  margin: auto;
+  gap: 1em; /* Add gap for spacing */
+}
+
+/* Make nav flexible to accommodate button */
+nav {
+  display: flex;
+  align-items: center;
+  margin-right: auto; /* Push toggle button to the right */
+}
+
+@media (max-width: 700px) {
+  .theme-toggle {
+    width: 40px;
+    height: 40px;
+    font-size: 1em;
+  }
+}
