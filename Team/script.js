@@ -474,6 +474,7 @@ var IMGammount = 0
 function repeatFunction() {
   if (addnew > 0) {
     IMGammount++
+    addnew--
     dvds.push(new DVDScreensaver({
       elementId: `Günther${IMGammount}`,
       speed: 5,
@@ -484,10 +485,9 @@ function repeatFunction() {
         addnew++
       }
     }));
-    addnew--
   } 
   // Schedule next execution
   setTimeout(repeatFunction, 1000);
 }
-addBouncingImage('DVD', `Günther1`, 'Günter.png', `Günther1`);
-document.addEventListener("loadeddata", repeatFunction);
+addBouncingImage('DVD', `Günther0`, 'Günter.png', `Günther0`);
+document.onloadeddata = repeatFunction;
