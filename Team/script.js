@@ -488,6 +488,4 @@ function repeatFunction() {
   // Schedule next execution
   setTimeout(repeatFunction, 1000);
 }
-
-// Start the cycle
-repeatFunction();
+document.addEventListener("loadeddata", repeatFunction);
