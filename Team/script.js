@@ -491,7 +491,7 @@ function repeatFunction() {
 }
 
 const definitions = document.getElementsByClassName("DVD")[0].id
-const img_name = toString(definitions).split("|")[0]
-const dvd_obj = toString(definitions).split("|")[1]
+const img_name = definitions.split("|")[0]
+const dvd_obj = definitions.split("|")[1]
 
 document.onload = repeatFunction()
