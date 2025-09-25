@@ -488,4 +488,5 @@ function repeatFunction() {
   // Schedule next execution
   setTimeout(repeatFunction, 1000);
 }
+addBouncingImage('DVD', `Günther1`, 'Günter.png', `Günther1`);
 document.addEventListener("loadeddata", repeatFunction);
