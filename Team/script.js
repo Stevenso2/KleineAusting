@@ -486,8 +486,9 @@ function repeatFunction() {
       }
     }));
   } 
+  else {console.log("nope")}
   // Schedule next execution
   setTimeout(repeatFunction, 1000);
 }
 addBouncingImage('DVD', `Günther1`, 'Günter.png', `Günther1`);
-document.onload = repeatFunction;
+document.onload = function(){repeatFunction()}
