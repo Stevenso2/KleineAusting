@@ -2,7 +2,7 @@
       font-family: 'Montserrat', Arial, sans-serif;
       margin: 0;
       height: 100%;
-      background: var(--bg-light);
+      background: var(--bg);
       color: var(--text-dark);
     }
     .content {
@@ -18,7 +18,7 @@ body {
   padding: 0;
   height: 100vh;
   overflow: hidden;
-  background: #000;
+  background: var(--bg);
   position: relative;
 }
 

@@ -1,13 +1,13 @@
 :root {
       --main-color: #2E8B8B;
       --accent-color: #176362;
-      --bg-light: #f5fafd;
+      --bg: #f5fafd;
       --text-dark: #1f2d2d;
     }
     body {
       font-family: 'Montserrat', Arial, sans-serif;
       margin: 0;
-      background: var(--bg-light);
+      background: var(--bg);
       color: var(--text-dark);
     }
     header {
