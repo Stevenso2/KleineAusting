@@ -24,7 +24,7 @@
       display: flex;
       align-items: end;
       justify-content: space-between;
-      padding: 0.7em 2vw;
+      padding: 0.7em 1em;
       max-width: 1200px;
       margin: auto;
     }
