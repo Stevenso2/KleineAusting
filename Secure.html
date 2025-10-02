@@ -1,252 +1,91 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>kleine Austing GmbH – persönlich näher, technisch weiter</title>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-<style>
-    :root {
-      --main-color: #2E8B8B;
-      --accent-color: #176362;
-      --bg-light: #f5fafd;
-      --text-dark: #1f2d2d;
-    }
-    body {
-      font-family: 'Montserrat', Arial, sans-serif;
-      margin: 0;
-      background: var(--bg-light);
-      color: var(--text-dark);
-    }
-    header {
-      background: #fff;
-      box-shadow: 0 2px 12px rgba(46,139,139,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 10;
-    }
-    .nav-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.7em 7vw;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .logo {
-      height: 48px;
-      width: auto;
-      transition: transform 0.2s;
-    }
-    .logo:hover {
-      transform: scale(1.08);
-    }
-    nav a {
-      margin-left: 2em;
-      text-decoration: none;
-      color: var(--main-color);
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-    nav a:hover {
-      color: var(--accent-color);
-    }
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 4em 1em 3em;
-      background: linear-gradient(90deg,#f5fafd 0%,#e2f4f7 100%);
-      text-align: center;
-    }
-    .hero h1 {
-      font-size: 2.4em;
-      font-weight: 700;
-      margin: 0.2em 0 0.6em;
-      color: var(--main-color);
-      letter-spacing: -1px;
-    }
-    .hero p {
-      font-size: 1.3em;
-      margin-bottom: 1.5em;
-      color: #2e4d4d;
-    }
-    .cta-btn {
-      background: var(--main-color);
-      color: #fff;
-      padding: 0.9em 2.2em;
-      border: none;
-      border-radius: 25px;
-      font-size: 1em;
-      font-weight: 700;
-      transition: background 0.2s, box-shadow 0.2s;
-      cursor: pointer;
-      box-shadow: 0 4px 16px rgba(46, 139, 139, 0.12);
-    }
-    .cta-btn:hover {
-      background: var(--accent-color);
-    }
-    .section {
-      max-width: 1000px;
-      margin: 3em auto 0 auto;
-      padding: 0 4vw;
-    }
-    .section-title {
-      text-align: center;
-      font-size: 1.8em;
-      color: var(--main-color);
-      margin-bottom: 1.5em;
-      font-weight: 700;
-    }
-    .about {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2em;
-    }
-    .about-text, 
-    .about-facts {
-      max-width: 500px;
-      font-size: 1.13em;
-    }
-    .about-facts {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2em;
-      justify-content: center;
-      margin-top: 1em;
-    }
-    .fact {
-      background: #fff;
-      padding: 1em 2em;
-      border-radius: 16px;
-      box-shadow: 0 2px 14px rgba(46,139,139,0.10);
-      text-align: center;
-      min-width: 140px;
-    }
-    .fact-title {
-      font-size: 1.1em;
-      color: var(--main-color);
-      font-weight: 600;
-      margin-bottom: 0.2em;
-    }
-    .services-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2em;
-      justify-content: center;
-      margin-top: 1em;
-    }
-    .service-box {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 2px 14px rgba(46,139,139,0.10);
-      padding: 1.2em 1.3em;
-      max-width: 260px;
-      min-width: 210px;
-      flex: 1 0 210px;
-      transition: transform 0.18s, box-shadow 0.18s;
-    }
-    .service-box:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 8px 32px rgba(46,139,139,0.18);
-    }
-    .service-title {
-      color: var(--main-color);
-      font-weight: 600;
-      font-size: 1.13em;
-      margin-bottom: 0.4em;
-    }
-    .team-grid {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1.6em;
-      margin-top: 1.4em;
-    }
-    .team-card {
-      background: #fff;
-      border-radius: 16px;
-      box-shadow: 0 2px 12px rgba(46,139,139,0.11);
-      padding: 1em 1.2em;
-      min-width: 150px;
-      text-align: center;
-      color: #264d4d;
-      font-weight: 500;
-      letter-spacing: 0.01em;
-    }
-    .team-card small {
-      display: block;
-      color: #68a3a3;
-      margin-top: 2px;
-    }
-    .contact-form {
-      display: flex;
-      flex-direction: column;
-      gap: 1em;
-      max-width: 340px;
-      margin: 2em auto 0 auto;
-      background: #fff;
-      padding: 2em 1.5em 1em 1.5em;
-      border-radius: 18px;
-      box-shadow: 0 2px 16px rgba(46,139,139,0.10);
-    }
-    .contact-form input,
-    .contact-form textarea {
-      font-family: inherit;
-      font-size: 1em;
-      padding: 0.7em 1em;
-      border: 1.5px solid #b2d1d1;
-      border-radius: 8px;
-      outline: none;
-      transition: border 0.18s;
-    }
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      border: 1.5px solid var(--main-color);
-    }
-    .contact-form textarea {
-      min-height: 64px;
-      resize: vertical;
-    }
-    .contact-form button {
-      margin-top: 0.2em;
-      width: 100%;
-    }
-    footer {
-      background: var(--main-color);
-      color: #fff;
-      text-align: center;
-      padding: 1.5em 1em 1em 1em;
-      font-size: 1em;
-      margin-top: 3em;
-      border-radius: 22px 22px 0 0;
-    }
-    @media (max-width: 700px) {
-      .nav-container {padding: 0.7em 3vw;}
-      .hero {padding: 2.2em 0.3em 2em;}
-      .section {padding: 0 2vw;}
-      .about, .services-list, .team-grid {flex-direction: column; gap: 1em;}
-      .about-facts {flex-direction: column;}
-    }
-    ::selection { background: #c8e6e6;}
-</style>
-</head>
-<body>
-<header>
-<div class="nav-container">
-<img src="kleine Austing Logo.png" class="logo" alt="Logo kleine Austing GmbH">
-</div>
-</header>
- 
-  <section class="hero">
-<h1>kleine Austing GmbH</h1>
-<p>persönlich näher, technisch weiter</p>
-<a href="#contact"><button class="cta-btn">Jetzt Kontakt aufnehmen</button></a>
-</section>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>kleine Austing GmbH – persönlich näher, technisch weiter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link id="theme-stylesheet" rel="stylesheet" href="style.css">
+  </head>
 
-<footer>
-&copy; 2025 kleine Austing GmbH &ndash; persönlich näher, technisch weiter
-</footer>
-</body>
+  <script src="gobal.js"></script>
+  <body>
+    <header>
+      <div class="nav-container">
+        <img src="kleine Austing Logo.png" class="logo" alt="Logo kleine Austing GmbH">
+        <nav>
+          <a href="Secure.html">Data Security</a>
+          <a href="index.html#about">Über uns</a>
+          <a href="index.html#services">Leistungen</a>
+          <a href="Team.html">Team</a>
+          <a href="index.html#contact">Kontakt</a>
+          <a><button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+            <span class="toggle-icon">🌙</span>
+          </button></a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <h1>kleine Austing GmbH</h1>
+      <p>persönlich näher, technisch weiter</p>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <img src="DataLeak01.png"; alt="Data Leak Illustration"; class="section-image";>
+        <div class="text-content">
+          <h2>Data Breaches</h2>
+          <p>
+            Back in January 2019, a huge batch of login info was leaked online, including 773 million unique email addresses and passwords from previous breaches. Then, in May 2022, Australian retailer Amart Furniture revealed that its warranty database had been hacked, exposing over 100,000 personal records. More recently, in August 2025, there was a suspected data leak from Italian fashion brand Giglio, which involved over a million email addresses and contact details getting out into the wild.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="text-content">
+          <h2>Identity Theft</h2>
+          <p>
+            Identity theft happens when someone steals your personal information, such as your name, email, or ID, and uses it to pretend they are you. Criminals can then open bank accounts, make online purchases, or even take loans in your name. To see how this can happen, you can check a website like HaveIBeenPwned.com, which shows if your email was exposed in a data breach. This makes it clear how easily stolen data can be misused.
+          </p>
+          <p>
+            Imagine I walk up to you right now and ask for your ID, date of birth, and passwords. Would you give it to me?
+          </p>
+          <p>
+            Now think about how often you actually give that information online — to websites, apps, or forms you barely know. If the site isn’t secure, you’re essentially giving strangers the keys to your personal data.  We’ll see how dangerous that can be and what you can do to stay safe.
+          </p>
+        </div>
+        <img src="DataLeak02.png"; alt="Data Leak Illustration"; class="section-image";>
+      </div>
+    </section>
+
+    <section class="hero">
+      <iframe src="https://www.passwordmonster.com/" width="95%", height="650px", scrolling="no", style="overflow: hidden;"></iframe>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <img src="Passwords.png"; alt="Data Leak Illustration"; class="section-image2";">
+        <div class="text-content">
+          <h2>Passwords</h2>
+          <p>
+            Passwords are the most common method people use to access their data, just as almost everyone uses a key to unlock their front door. Now imagine you lose your housekey and someone can just enter and steal all of your stuff. The same happens when someone gets your password, that person can then access all of your data.
+          </p>
+          <p>
+            To improve your password security, we recommend using a password manager, we will give you a recommendation further down the article. You should also enable MFA (multi-factor authentication) on all sites where it is possible, more on that later.
+          </p>
+          <p>
+            <a href="https://bitwarden.com/de-de/"> <img src="Bitwarden_logo.svg" height="128px" width="128px" style="display: inline-block;"> </a>
+            <img src="Datashield.png" height="128px" width="128px" style="display: inline-block;">
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      &copy; 2025 kleine Austing GmbH &ndash; persönlich näher, technisch weiter
+    </footer>
+  </body>
 </html>
