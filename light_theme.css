@@ -1,0 +1,116 @@
+:root {
+  --main-color: #2E8B8B;
+  --accent-color: #176362;
+  --bg: #f5fafd;
+  --text-dark: #1f2d2d;
+}
+body {
+  background: var(--bg);
+  color: var(--text-dark);
+}
+header {
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(46,139,139,0.05);
+}
+a {
+  color: var(--text-dark);
+}
+nav a {
+  color: var(--main-color);
+}
+nav a:hover {
+  color: var(--accent-color);
+}
+.hero {
+  background: linear-gradient(90deg,#f5fafd 0%,#e2f4f7 100%);
+}
+.hero h1 {
+  color: var(--main-color);
+}
+.hero p {
+  color: #2e4d4d;
+}
+.cta-btn {
+  background: var(--main-color);
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(46, 139, 139, 0.12);
+}
+.cta-btn:hover {
+  background: var(--accent-color);
+}
+.section-title {
+  color: var(--main-color);
+}
+.fact {
+  background: #fff;
+  padding: 1em 2em;
+  box-shadow: 0 2px 14px rgba(46,139,139,0.10);
+}
+.fact-title {
+  color: var(--main-color);
+}
+.service-box {
+  background: #fff;
+  box-shadow: 0 2px 14px rgba(46,139,139,0.10);
+}
+.service-box:hover {
+  box-shadow: 0 8px 32px rgba(46,139,139,0.18);
+}
+.service-title {
+  color: var(--main-color);
+}
+.team-card {
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(46,139,139,0.11);
+  color: #264d4d;
+}
+.team-card small {
+  color: #68a3a3;
+}
+.contact-form {
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(46,139,139,0.10);
+}
+.contact-form input,
+.contact-form textarea {
+  border: 1.5px solid #b2d1d1;
+}
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 1.5px solid var(--main-color);
+}
+footer {
+  background: var(--main-color);
+  color: #fff;
+}
+::selection { background: #c8e6e6;}
+
+.content-section {
+  background-color: #f8f9fa;
+}
+
+.section-image {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.section-image2 {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.text-content h2 {
+  color: #333;
+}
+
+.text-content p {
+  color: #555;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: var(--main-color);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.theme-toggle:hover {
+  background: var(--accent-color);
+}

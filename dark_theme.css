@@ -1,0 +1,160 @@
+@media (prefers-color-scheme: dark) {
+:root {
+  --main-color: #4DABA8; /* Lighter teal for better contrast on dark */
+  --accent-color: #6BC5C2; /* Even lighter teal for hover states */
+  --bg: #121212; /* Main dark background */
+  --bg-secondary: #1e1e1e; /* Secondary dark background */
+  --bg-card: #2d2d2d; /* Card backgrounds */
+  --text-light: #e0e0e0; /* Main text color */
+  --text-secondary: #b0b0b0; /* Secondary text */
+  --border-dark: #404040; /* Border colors */
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-light);
+}
+
+header {
+  background: var(--bg-secondary);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+a {
+  color: var(--text-light);
+}
+
+nav a {
+  color: var(--main-color);
+}
+
+nav a:hover {
+  color: var(--accent-color);
+}
+
+.hero {
+  background: linear-gradient(90deg, var(--bg) 0%, #1a1a1a 100%);
+}
+
+.hero h1 {
+  color: var(--main-color);
+}
+
+.hero p {
+  color: var(--text-secondary);
+}
+
+.cta-btn {
+  background: var(--main-color);
+  color: var(--bg);
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(77, 171, 168, 0.25);
+}
+
+.cta-btn:hover {
+  background: var(--accent-color);
+}
+
+.section-title {
+  color: var(--main-color);
+}
+
+.fact {
+  background: var(--bg-card);
+  box-shadow: 0 2px 14px rgba(0,0,0,0.4);
+  border: 1px solid var(--border-dark);
+}
+
+.fact-title {
+  color: var(--main-color);
+}
+
+.service-box {
+  background: var(--bg-card);
+  box-shadow: 0 2px 14px rgba(0,0,0,0.4);
+  border: 1px solid var(--border-dark);
+}
+
+.service-box:hover {
+  box-shadow: 0 8px 32px rgba(77, 171, 168, 0.3);
+}
+
+.service-title {
+  color: var(--main-color);
+}
+
+.team-card {
+  background: var(--bg-card);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  color: var(--text-light);
+  border: 1px solid var(--border-dark);
+}
+
+.team-card small {
+  color: var(--text-secondary);
+}
+
+.contact-form {
+  background: var(--bg-card);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.4);
+  border: 1px solid var(--border-dark);
+}
+
+.contact-form input,
+.contact-form textarea {
+  border: 1.5px solid var(--border-dark);
+  background: var(--bg-secondary);
+  color: var(--text-light);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--text-secondary);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border: 1.5px solid var(--main-color);
+}
+
+footer {
+  background: var(--main-color);
+  color: var(--bg);
+}
+
+::selection { 
+  background: rgba(77, 171, 168, 0.3);
+  color: var(--text-light);
+}
+
+.content-section {
+  background-color: var(--bg-secondary);
+}
+
+.section-image {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  border: 1px solid var(--border-dark);
+}
+
+.section-image2 {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+  border: 1px solid var(--border-dark);
+}
+
+.text-content h2 {
+  color: var(--main-color);
+}
+
+.text-content p {
+  color: var(--text-light);
+}
+/* Theme Toggle Button */
+.theme-toggle {
+  background: var(--main-color);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.theme-toggle:hover {
+  background: var(--accent-color);
+}
+}
